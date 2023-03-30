@@ -24,7 +24,6 @@ class Form extends Component {
   }
   
   render() {
-    console.log(this.state);
     return (
       <div>
         <h1>Formulario</h1>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 export class Counter extends Component {
   constructor(props) {
+    console.log('Corre constructor');
     super(props);
     if (this.props.defaultCount && !(typeof this.props.defaultCount === 'number')) {
       throw new Error ('Default count is not a number');
@@ -10,16 +11,26 @@ export class Counter extends Component {
     this.state = {
       count: this.props.defaultCount,
     };
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
   }
 
-  handleIncrement = () => {
+  componentDidMount() {
+    console.log('Corre did mount');
+  }
+
+  componentDidUpdate() {
+    console.log('Corre did update');
+  }
+
+  handleIncrement = function () {
     this.setState((prevState) => ({
       ...this.state,
       count: prevState.count + 1
     }));
   }
 
-  handleDecrement = () => {
+  handleDecrement = function () {
     this.setState((prevState) => ({
       ...this.state,
       count: prevState.count - 1
@@ -27,6 +38,7 @@ export class Counter extends Component {
   } 
 
   render() {
+    console.log('Corre render');
     return (
       <div>
         <h1>Cuenta</h1>

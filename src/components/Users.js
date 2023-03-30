@@ -38,8 +38,6 @@ export class Users extends Component {
   }
 
   render() {
-    console.log('Renderiza Users');
-    console.log(this.state);
     return (
       <div>
         <h1>Usuarios</h1>
