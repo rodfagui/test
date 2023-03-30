@@ -23,6 +23,10 @@ export class Counter extends Component {
     console.log('Corre did update');
   }
 
+  componentWillUnmount() {
+    console.log('Corre will unmount');
+  }
+
   handleIncrement = function () {
     this.setState((prevState) => ({
       ...this.state,
