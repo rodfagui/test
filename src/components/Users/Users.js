@@ -1,7 +1,9 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-function SecondClasses(props) {
+import './Users.css';
+
+function Users(props) {
   const baseUrl = 'https://jsonplaceholder.typicode.com/users';
 
   const [users, setUsers] = useState([]);
@@ -25,10 +27,9 @@ function SecondClasses(props) {
   }
 
   if (Array.isArray(users) && users.length > 0) {
-    console.log('Conditional', users);
     return (
       <div>
-        <h1>Usuarios</h1>
+        <h1>Users</h1>
         <table>
           <thead>
             <tr>
@@ -52,4 +53,4 @@ function SecondClasses(props) {
   );
 }
 
-export default SecondClasses;
+export default Users;

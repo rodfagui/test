@@ -5,8 +5,7 @@ import {
   Link
 } from "react-router-dom";
 
-import FirstClasses from "./components/firstClasses";
-import SecondClasses from "./components/secondClasses";
+import Users from "./components/Users/Users";
 
 function App() {
 
@@ -16,10 +15,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">First Classes</Link>
-            </li>
-            <li>
-              <Link to="/second">Second Clasess</Link>
+              <Link to="/">Users</Link>
             </li>
           </ul>
         </nav>
@@ -27,11 +23,8 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/second">
-            <SecondClasses />
-          </Route>
           <Route path="/">
-            <FirstClasses />
+            <Users />
           </Route>
         </Switch>
       </div>
