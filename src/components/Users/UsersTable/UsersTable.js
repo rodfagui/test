@@ -31,7 +31,7 @@ function UsersTable(props) {
 
   return (
     <div>
-      No hay informaciòn
+      No hay información
     </div>
   );
 }
