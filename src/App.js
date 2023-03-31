@@ -9,6 +9,7 @@ import { PostsContextProvider } from "./contexts/postsContext";
 import Home from "./components/Home/Home";
 import Users from "./components/Users/Users";
 import Posts from "./components/Posts/Posts";
+import User from "./components/Users/User/User";
 
 function App() {
   return (
@@ -23,10 +24,11 @@ function App() {
           </li>
         </ul>
       </nav>
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
       <Routes>
-        <Route path="/users" element={<UsersContextProvider><Users /></UsersContextProvider>} />
+        <Route path="/users" element={<UsersContextProvider />}>
+          <Route index element={<Users />} />
+          <Route path=":id" element={<User />} />
+        </Route>
         <Route path="/posts" element={<PostsContextProvider><Posts /></PostsContextProvider>} />
         <Route path="/" element={<Home />} />
       </Routes>
