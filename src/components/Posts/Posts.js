@@ -15,18 +15,10 @@ function Posts(props) {
     });
   }, []);
 
-  if (Array.isArray(posts) && posts.length > 0) {
-    return (
-      <div>
-        <h1>Posts</h1>
-        <PostsTable posts={posts}/>
-      </div>
-    );
-  }
-
   return (
     <div>
-      No hay informaciòn
+      <h1>Posts</h1>
+      <PostsTable posts={posts}/>
     </div>
   );
 }

@@ -1,32 +1,16 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 
 import './Users.css';
+import { UserContext } from '../../App';
 import UsersTable from './UsersTable/UsersTable';
 
 function Users(props) {
-  const baseUrl = 'https://jsonplaceholder.typicode.com/users';
-
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios.get(baseUrl).then((response) => {
-      setUsers(response.data);
-    });
-  }, []);
-
-  if (Array.isArray(users) && users.length > 0) {
-    return (
-      <div>
-        <h1>Users</h1>
-        <UsersTable users={users}/>
-      </div>
-    );
-  }
+  const { users } = useContext(UserContext);
 
   return (
     <div>
-      No hay informaciòn
+      <h1>Users</h1>
+      <UsersTable users={users}/>
     </div>
   );
 }
