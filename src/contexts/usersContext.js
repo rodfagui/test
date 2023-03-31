@@ -6,6 +6,8 @@ const UsersContext = createContext();
 function UsersContextProvider(props) {
   const { children } = props;
 
+  const USERS_MAX_NUM_PER_REQUEST = 100;
+
   const baseUrl = 'https://jsonplaceholder.typicode.com';
 
   const [users, setUsers] = useState([]);
@@ -22,7 +24,7 @@ function UsersContextProvider(props) {
 
   return (
     // the Provider gives access to the context to its children
-    <UsersContext.Provider value={{ users }}>
+    <UsersContext.Provider value={{ users, usersMaxNum: USERS_MAX_NUM_PER_REQUEST }}>
       { children }
     </UsersContext.Provider>
   );

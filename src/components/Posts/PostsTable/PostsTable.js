@@ -1,8 +1,9 @@
 import './PostsTable.css';
 import PostsTableRow from './PostsTableRow/PostsTableRow';
+import { usePostsContext } from '../../../hooks/usePostsContext';
 
 function PostsTable(props) {
-  const { posts } = props;
+  const { posts } = usePostsContext();
 
   const renderPosts = () => {
     return posts.map((post) => {

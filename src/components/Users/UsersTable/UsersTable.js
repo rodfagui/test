@@ -1,8 +1,9 @@
 import './UsersTable.css';
 import UsersTableRow from './UsersTableRow/UsersTableRow';
+import { useUsersContext } from '../../../hooks/useUsersContext';
 
 function UsersTable(props) {
-  const { users } = props;
+  const { users, usersMaxNum } = useUsersContext();
 
   const renderUsers = () => {
     return users.map((user) => {
