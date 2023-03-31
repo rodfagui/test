@@ -7,6 +7,7 @@ import {
 
 import Home from "./components/Home/Home";
 import Users from "./components/Users/Users";
+import Posts from "./components/Posts/Posts";
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
             <li>
               <Link to="/users">Users</Link>
             </li>
+            <li>
+              <Link to="/posts">Posts</Link>
+            </li>
           </ul>
         </nav>
 
@@ -26,6 +30,9 @@ function App() {
         <Switch>
           <Route path="/users">
             <Users />
+          </Route>
+          <Route path="/posts">
+            <Posts />
           </Route>
           <Route path="/">
             <Home />
