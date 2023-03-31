@@ -1,5 +1,3 @@
-import { createContext, useState, useEffect } from "react";
-import axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,29 +5,14 @@ import {
   Link
 } from "react-router-dom";
 
+import { UsersContextProvider } from "./contexts/usersContext";
 import Home from "./components/Home/Home";
 import Users from "./components/Users/Users";
 import Posts from "./components/Posts/Posts";
 
-export const UserContext = createContext();
-
 function App() {
-  const baseUrl = 'https://jsonplaceholder.typicode.com';
-
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    const fetchUsers = () => {
-      axios.get(`${baseUrl}/users`)
-      .then((response) => { setUsers(response.data) })
-      .catch((error) => console.log(error));
-    }
-
-    fetchUsers();
-  }, []);
-
   return (
-    <UserContext.Provider value={{ users }}>
+    <UsersContextProvider>
       <Router>
         <div>
           <nav>
@@ -58,7 +41,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </UserContext.Provider>
+    </UsersContextProvider>
   );
 }
 

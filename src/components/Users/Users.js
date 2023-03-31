@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 
 import './Users.css';
-import { UserContext } from '../../App';
+import { UsersContext } from '../../contexts/usersContext';
 import UsersTable from './UsersTable/UsersTable';
 
 function Users(props) {
-  const { users } = useContext(UserContext);
+  const { users } = useContext(UsersContext);
 
   return (
     <div>
